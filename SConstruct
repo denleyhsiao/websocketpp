@@ -27,7 +27,7 @@ if os.environ.has_key('BOOSTROOT'):
 
 if os.environ.has_key('BOOST_ROOT'):
    env['BOOST_INCLUDES'] = os.environ['BOOST_ROOT']
-   env['BOOST_LIBS'] = os.path.join(os.environ['BOOST_ROOT'], 'stage', 'lib')
+   env['BOOST_LIBS'] = os.path.join(os.environ['BOOST_ROOT'], 'lib')
 elif os.environ.has_key('BOOST_INCLUDES') and os.environ.has_key('BOOST_LIBS'):
    env['BOOST_INCLUDES'] = os.environ['BOOST_INCLUDES']
    env['BOOST_LIBS'] = os.environ['BOOST_LIBS']
@@ -56,7 +56,7 @@ def boostlibs(libnames,localenv):
       prefix = localenv['SHLIBPREFIX'] if boost_linkshared else localenv['LIBPREFIX']
       suffix = localenv['SHLIBSUFFIX'] if boost_linkshared else localenv['LIBSUFFIX']
       for name in libnames:
-         lib = File(os.path.join(localenv['BOOST_LIBS'], '%sboost_%s%s' % (prefix, name, suffix)))
+         lib = File(os.path.join(localenv['BOOST_LIBS'], '%sboost_%s-mt%s' % (prefix, name, suffix)))
          libs.append(lib)
       return libs
 
