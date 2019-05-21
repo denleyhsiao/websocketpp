@@ -1,2 +1,10 @@
+基于mac下的使用
+
+# 环境
+执行：`brew install boost openssl scons`
+
 # 编译
-运行`./scripts/build.sh`，更多详情[参考](https://github.com/zaphoyd/websocketpp/wiki/Building-the-examples-and-unit-tests)
+执行：`./scripts/build.sh`
+
+# 参考
+* [Building the examples and unit tests](https://github.com/zaphoyd/websocketpp/wiki/Building-the-examples-and-unit-tests)
